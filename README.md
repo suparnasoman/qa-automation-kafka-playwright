@@ -50,3 +50,63 @@ end-to-end-quality-engineering-project/
 │ ├── utils/ # Helpers, DB connections, Kafka client
 │
 └── README.md
+
+
+---
+
+## 🏗 Setup Instructions
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/<your-username>/realworld-quality-engineering-project.git
+cd realworld-quality-engineering-project
+---
+
+### 2️⃣ Start PostgreSQL in Docker
+```bash
+Copy
+Edit
+docker run --name postgres-realworld \
+  -e POSTGRES_USER=realworld \
+  -e POSTGRES_PASSWORD=realworld \
+  -e POSTGRES_DB=realworld \
+  -p 5432:5432 -d postgres:14
+
+### 3️⃣ Run Backend
+```bash
+Copy
+Edit
+cd backend
+npm install
+npm start
+
+**
+### 4️⃣ Run Tests**
+```bash
+Copy
+Edit
+cd qa-tests
+npm install
+npx playwright test
+
+📅 Roadmap
+
+Integrate Kafka producer/consumer and validate message flow
+
+ Deploy backend & DB on Kubernetes
+
+ Add ETL pipeline validation
+
+ Configure CI/CD in Azure DevOps
+
+ Performance testing with k6
+
+📜 License
+
+MIT License — feel free to fork and adapt.
+
+yaml
+Copy
+Edit
+
+---
